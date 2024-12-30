@@ -11,6 +11,19 @@ function frame = helperDisplayResults(frame, keypointConnections, keypoints, val
         % Dibujar puntos clave y sus conexiones
         frame = insertObjectKeypoints(frame, keypoints, "KeypointVisibility", validity, ...
             "Connections", keypointConnections, "ConnectionColor", "green", "KeypointColor", "yellow");
+        
+        % Agregar números de los puntos clave en cada punto clave
+        for i = 1:size(keypoints, 1)
+            if validity(i) == 1  % Si el punto clave es válido
+                position = keypoints(i, :);
+                % Asegurarse de que la posición esté dentro de los límites de la imagen
+                x = min(max(round(position(1)), 1), frameWidth);  % Coordenada X (ajustada a los límites)
+                y = min(max(round(position(2)), 1), frameHeight); % Coordenada Y (ajustada a los límites)
+                
+                % Insertar el número del punto clave en la posición correspondiente
+                frame = insertText(frame, [x, y], num2str(i), 'BoxColor', 'black', 'TextColor', 'yellow', 'FontSize', 10, 'AnchorPoint', 'Center');
+            end
+        end
     end
     
     % Dibujar cajas delimitadoras y etiquetas

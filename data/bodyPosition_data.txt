@@ -1,0 +1,198 @@
+Neck: 865.10632 381.76221
+Left Knee: 924.67529 797.25476
+Right Knee: 842.30664 814.21362
+Left Ankle: 935.78265 915.96692
+Right Ankle: 870.77716 966.84357
+Knee Distance: 137.06001
+Ankle Distance: 163.94722
+Detected Posture: Unknown
+----------------------------
+Neck: 863.29041 375.25909
+Left Knee: 915.28442 796.31219
+Right Knee: 848.59320 813.49805
+Left Ankle: 926.75037 925.20605
+Right Ankle: 869.06250 968.17065
+Knee Distance: 126.98370
+Ankle Distance: 157.89549
+Detected Posture: Unknown
+----------------------------
+Neck: 862.09900 379.19061
+Left Knee: 906.01575 796.42023
+Right Knee: 847.04083 813.80481
+Left Ankle: 917.82654 935.49677
+Right Ankle: 867.54388 961.57361
+Knee Distance: 118.87651
+Ankle Distance: 148.35138
+Detected Posture: Unknown
+----------------------------
+Neck: 854.16101 370.90695
+Left Knee: 897.90387 779.75415
+Right Knee: 847.58331 805.85083
+Left Ankle: 910.55621 953.73175
+Right Ankle: 868.31030 962.43060
+Knee Distance: 118.21676
+Ankle Distance: 140.26616
+Detected Posture: Unknown
+----------------------------
+Neck: 845.41809 370.31549
+Left Knee: 889.61145 796.88361
+Right Knee: 839.04468 814.29456
+Left Ankle: 893.36011 953.58209
+Right Ankle: 867.86841 953.58209
+Knee Distance: 115.54435
+Ankle Distance: 128.49164
+Detected Posture: Unknown
+----------------------------
+Neck: 843.20667 372.11600
+Left Knee: 888.03687 797.79553
+Right Knee: 845.18384 815.53217
+Left Ankle: 874.55334 957.42535
+Right Ankle: 874.55334 957.42535
+Knee Distance: 127.05328
+Ankle Distance: 164.46815
+Detected Posture: Unknown
+----------------------------
+Neck: 841.37311 365.84250
+Left Knee: 878.18750 798.80664
+Right Knee: 834.60437 816.84686
+Left Ankle: 855.46240 952.14813
+Right Ankle: 864.26575 952.14813
+Knee Distance: 122.62138
+Ankle Distance: 154.68561
+Detected Posture: Unknown
+----------------------------
+Neck: 840.23083 369.97253
+Left Knee: 868.51080 801.01318
+Right Knee: 824.20129 819.35535
+Left Ankle: 854.14374 947.75043
+Right Ankle: 863.09399 947.75043
+Knee Distance: 124.39362
+Ankle Distance: 155.55754
+Detected Posture: Unknown
+----------------------------
+Neck: 835.19043 367.10187
+Left Knee: 854.90234 810.72577
+Right Knee: 828.06689 819.96790
+Left Ankle: 849.22437 949.35822
+Right Ankle: 858.24377 949.35822
+Knee Distance: 116.37577
+Ankle Distance: 124.54037
+Detected Posture: Unknown
+----------------------------
+Neck: 829.16980 363.02814
+Left Knee: 858.46722 821.03815
+Right Knee: 831.10260 821.03815
+Left Ankle: 825.13940 951.89813
+Right Ankle: 852.50403 951.89813
+Knee Distance: 115.20722
+Ankle Distance: 133.27124
+Detected Posture: Unknown
+----------------------------
+Neck: 830.55920 363.22885
+Left Knee: 850.53986 812.53363
+Right Knee: 823.13617 812.53363
+Left Ankle: 835.88611 962.30188
+Right Ankle: 863.06378 952.94135
+Knee Distance: 115.93001
+Ankle Distance: 133.89346
+Detected Posture: Unknown
+----------------------------
+Neck: 834.07349 354.51718
+Left Knee: 845.14618 813.20514
+Right Knee: 817.74115 813.20514
+Left Ankle: 830.49170 962.98077
+Right Ankle: 857.67072 953.61981
+Knee Distance: 101.87280
+Ankle Distance: 140.13544
+Detected Posture: Unknown
+----------------------------
+Neck: 829.88452 354.22318
+Left Knee: 840.94055 812.29608
+Right Knee: 813.79779 821.64447
+Left Ankle: 826.30505 961.87091
+Right Ankle: 852.99652 933.82562
+Knee Distance: 106.24536
+Ankle Distance: 142.48376
+Detected Posture: Unknown
+----------------------------
+Neck: 820.18341 353.00876
+Left Knee: 840.18793 802.81927
+Right Knee: 794.91638 821.56140
+Left Ankle: 825.74451 962.12720
+Right Ankle: 852.50018 934.01404
+Knee Distance: 109.23328
+Ankle Distance: 148.22871
+Detected Posture: Unknown
+----------------------------
+Neck: 816.55768 343.08228
+Left Knee: 836.79614 802.42694
+Right Knee: 782.36053 821.17572
+Left Ankle: 822.57404 971.16583
+Right Ankle: 830.81677 933.66827
+Knee Distance: 114.37474
+Ankle Distance: 138.79103
+Detected Posture: Unknown
+----------------------------
+Neck: 813.33759 342.38611
+Left Knee: 833.64124 803.12207
+Right Knee: 769.86578 821.92761
+Left Ankle: 819.15063 962.96924
+Right Ankle: 845.54218 915.95532
+Knee Distance: 120.18225
+Ankle Distance: 144.87424
+Detected Posture: Unknown
+----------------------------
+Neck: 808.31433 329.75641
+Left Knee: 829.18707 811.78949
+Right Knee: 755.40143 811.78949
+Left Ankle: 814.39539 963.01550
+Right Ankle: 823.39020 953.56390
+Knee Distance: 125.43983
+Ankle Distance: 137.52901
+Detected Posture: Unknown
+----------------------------
+Neck: 805.38318 330.66806
+Left Knee: 826.24115 812.38123
+Right Knee: 733.61365 793.49048
+Left Ankle: 820.67615 963.50690
+Right Ankle: 800.87238 906.83478
+Knee Distance: 141.35666
+Ankle Distance: 149.64174
+Detected Posture: Unknown
+----------------------------
+Neck: 801.08636 320.50143
+Left Knee: 831.26471 803.79828
+Right Knee: 719.83868 784.84546
+Left Ankle: 816.89374 974.37366
+Right Ankle: 787.31903 898.56238
+Knee Distance: 156.10193
+Ankle Distance: 153.02751
+Detected Posture: Unknown
+----------------------------
+Neck: 792.04065 321.86304
+Left Knee: 831.57367 799.62268
+Right Knee: 709.89960 780.51233
+Left Ankle: 817.08771 971.61615
+Right Ankle: 777.94202 895.17462
+Knee Distance: 167.30594
+Ankle Distance: 155.77016
+Detected Posture: Unknown
+----------------------------
+Neck: 783.61749 312.21512
+Left Knee: 823.82526 797.87549
+Right Knee: 700.14398 778.44904
+Left Ankle: 818.58636 972.71320
+Right Ankle: 769.78485 914.43396
+Knee Distance: 174.23773
+Ankle Distance: 146.95651
+Detected Posture: Unknown
+----------------------------
+Neck: 776.59644 308.95068
+Left Knee: 827.53064 798.84082
+Right Knee: 690.48022 778.84528
+Left Ankle: 822.15338 978.80048
+Right Ankle: 743.14404 938.80945
+Knee Distance: 186.26291
+Ankle Distance: 150.93979
+Detected Posture: Unknown
+----------------------------

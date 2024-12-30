@@ -1,4 +1,4 @@
-% MULTI-OBJECT TRACKING AND HUMAN POSE ESTIMATION
+%% MULTI-OBJECT TRACKING AND HUMAN POSE ESTIMATION
 % Archivo principal
 
 % Paso 1: Configuración Inicial
@@ -13,7 +13,7 @@ keyPtDetector = hrnetObjectKeypointDetector;
 keyPtDetector.Threshold = 0.3; % Establecer el umbral
 
 % Leer datos del video
-videoFile = 'videos/Car_Bike_People.mp4';
+videoFile = 'videos/ParqueAtracciones.mp4';
 reader = VideoReader(videoFile);
 
 % Configurar el rastreador GNN
@@ -35,36 +35,44 @@ minDetectionSize = [5 5];
 % Inicializar reproductor de video
 player = vision.VideoPlayer(Position=[20 400 700 400]);
 
-% Abrir archivo para almacenar los resultados
-logFile = fopen('execution_log.csv', 'w');
+% Abrir archivos para almacenar los resultados y mensajes de depuración
+outputFolder = 'data';
+logFile = fopen(fullfile(outputFolder, 'execution_log.csv'), 'w');
+debugFile = fopen(fullfile(outputFolder, 'debug_log.txt'), 'w');
 fprintf(logFile, 'Frame,NumDetections,NumTracks,NumKeypoints\n'); % Cabecera del archivo CSV
 
 % Variables para contar cuadros
 frameCount = 0;
 
-% Bucle principal para procesamiento de video
+%% Bucle principal para procesamiento de video
 while hasFrame(reader)
     frame = readFrame(reader);
     frameCount = frameCount + 1;
 
     try
         % Paso 1: Detectar personas y predecir cajas delimitadoras
-        bboxes = helperDetectObjects(peopleDet, frame, detectionThreshold, frameCount, skipFrame, minDetectionSize);
-        disp(['Bboxes size: ', num2str(size(bboxes))]);  % Mostrar el tamaño de las bboxes
+        bboxes = helperDetectObjects(peopleDet, frame, detectionThreshold, frameCount, skipFrame, minDetectionSize, debugFile);
+        fprintf(debugFile, 'Bboxes size: %s\n', mat2str(size(bboxes)));  % Guardar el tamaño de las bboxes
 
         if ~isempty(bboxes)  % Solo proceder si hay cajas delimitadoras
             try
                 % Paso 2: Rastrear personas entre cuadros
                 [trackBboxes, labels] = helperTrackBoundingBoxes(tracker, reader.FrameRate, frameCount, bboxes);
-                disp(['Track Bboxes size: ', num2str(size(trackBboxes))]);  % Mostrar el tamaño de trackBboxes
+                fprintf(debugFile, 'Track Bboxes size: %s\n', mat2str(size(trackBboxes)));  % Guardar el tamaño de trackBboxes
 
                 % Paso 3: Detectar puntos clave y estimar posturas
                 if ~isempty(trackBboxes)  % Solo proceder si hay cajas de seguimiento
                     [keypoints, validity] = helperDetectKeypointsUsingHRNet(frame, keyPtDetector, trackBboxes);
-                    disp(['Keypoints size: ', num2str(size(keypoints))]);  % Mostrar el tamaño de los keypoints
+                    fprintf(debugFile, 'Keypoints size: %s\n', mat2str(size(keypoints)));  % Guardar el tamaño de los keypoints
+                
+                    % Clasificar la postura según los keypoints
+                    posture = classifyPosture(keypoints, validity);
+                    % Mostrar la postura detectada en la consola
+                    disp(['Detected Posture: ', posture]);  % Imprimir la postura en la consola
                 else
                     keypoints = [];
                     validity = [];
+                    posture = 'Unknown';
                 end
 
                 % Paso 4: Guardar resultados en el archivo
@@ -83,7 +91,6 @@ while hasFrame(reader)
                 validity = [];
             end
 
-
             try
                 % Paso 5: Visualizar resultados
                 frame = helperDisplayResults(frame, keyPtDetector.KeypointConnections, keypoints, validity, trackBboxes, labels, frameCount);
@@ -97,7 +104,7 @@ while hasFrame(reader)
             player(frame);
 
         else
-            disp('No detections found in this frame.');
+            fprintf(debugFile, 'No detections found in this frame.\n');
         end
 
     catch detectError
@@ -110,13 +117,13 @@ while hasFrame(reader)
         validity = [];
     end
 
-
     % Pausa entre cuadros para que se reproduzca a la misma velocidad que el video original
     pause(1 / frameRate);  % Pausa para igualar la tasa de cuadros del video
 end
 
-% Cerrar el archivo de registro
+% Cerrar los archivos de registro
 fclose(logFile);
+fclose(debugFile);
 
 % Cerrar el reproductor de video
 release(player);

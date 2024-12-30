@@ -1,14 +1,15 @@
-function box = helperDetectObjects(detector, frame, detectionThreshold, frameCount, skipFrame, minDetectionSize)
+function box = helperDetectObjects(detector, frame, detectionThreshold, frameCount, skipFrame, minDetectionSize, debugFile)
     box = [];
     if mod(frameCount, skipFrame) == 0
         % Detectar utilizando el modelo YOLOv4
         [bboxes, scores] = detect(detector, frame, 'Threshold', detectionThreshold);
         
-        % Verificar las detecciones
-        disp('Bboxes:');
-        disp(bboxes);  % Mostrar las cajas detectadas
-        disp('Scores:');
-        disp(scores);  % Mostrar las puntuaciones
+        % Guardar las cajas detectadas en el archivo de depuración
+        fprintf(debugFile, 'Frame %d\n', frameCount);
+        fprintf(debugFile, 'Bboxes:\n');
+        fprintf(debugFile, '%s\n', mat2str(bboxes));  % Guardar las cajas detectadas
+        fprintf(debugFile, 'Scores:\n');
+        fprintf(debugFile, '%s\n', mat2str(scores));  % Guardar las puntuaciones
 
         % Obtener las dimensiones de la imagen
         [frameHeight, frameWidth, ~] = size(frame);
@@ -24,6 +25,7 @@ function box = helperDetectObjects(detector, frame, detectionThreshold, frameCou
         
         box = bboxes(valid, :);
         
-        disp(['Valid detections: ', num2str(sum(valid))]);  % Verificar la cantidad de detecciones válidas
+        % Guardar la cantidad de detecciones válidas en el archivo de depuración
+        fprintf(debugFile, 'Valid detections: %d\n\n', sum(valid));
     end
 end
